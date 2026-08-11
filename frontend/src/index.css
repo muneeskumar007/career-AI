@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: toggled by ThemeContext adding/removing `dark`
+   on <html>, not the OS `prefers-color-scheme` media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink: var(--careerai-ink);
+  --color-surface: var(--careerai-surface);
+  --color-surface-raised: var(--careerai-surface-raised);
+  --color-signal: var(--careerai-signal);
+  --color-signal-dim: var(--careerai-signal-dim);
+  --color-amber: var(--careerai-amber);
+  --color-danger: var(--careerai-danger);
+  --color-ink-text: var(--careerai-text);
+  --color-ink-muted: var(--careerai-text-muted);
+  --color-hairline: var(--careerai-border);
+}
+
+/* Light mode (default) — cool off-white, not cream/terracotta */
+:root {
+  --careerai-ink: #eef1f5;
+  --careerai-surface: #ffffff;
+  --careerai-surface-raised: #ffffff;
+  --careerai-signal: #0e8e79;
+  --careerai-signal-dim: #0e8e7920;
+  --careerai-amber: #a56600;
+  --careerai-danger: #c8392a;
+  --careerai-text: #10131a;
+  --careerai-text-muted: #5b6472;
+  --careerai-border: #dfe3e9;
+}
+
+/* Dark mode — deep ink navy, signal teal, readiness amber */
+.dark {
+  --careerai-ink: #090c14;
+  --careerai-surface: #10162a;
+  --careerai-surface-raised: #161d35;
+  --careerai-signal: #2fe2c4;
+  --careerai-signal-dim: #2fe2c41a;
+  --careerai-amber: #f5b942;
+  --careerai-danger: #ff6b6b;
+  --careerai-text: #f4f6f8;
+  --careerai-text-muted: #8d97a8;
+  --careerai-border: rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-ink);
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-ink);
+  color: var(--color-ink-text);
+}
+
+::selection {
+  background-color: var(--careerai-signal);
+  color: var(--careerai-ink);
+}
+
+/* Visible, deliberate focus ring on every interactive element — never
+   suppressed with outline-none without a replacement. */
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-hairline);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
