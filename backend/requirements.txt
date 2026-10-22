@@ -1,19 +1,41 @@
-fastapi==0.141.1
-uvicorn[standard]==0.52.1
+# fastapi==0.141.1
+# uvicorn[standard]==0.52.1
+# motor==3.7.1
+# pydantic==2.13.4
+# pydantic-settings==2.14.2
+# email-validator==2.3.0
+# pyjwt==2.7.0
+# bcrypt==5.0.0
+# slowapi==0.1.10
+# gunicorn==26.0.0
+# python-dotenv==1.2.2
+# pymupdf==1.28.0
+# python-docx==1.2.0
+# spacy==3.8.14
+# python-multipart==0.0.32
+# scikit-learn==1.8.0
+# reportlab==4.4.10
+# opencv-python-headless==4.13.0.92
+# mediapipe==0.10.33
+
+
+# 3.10
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
 motor==3.7.1
-pydantic==2.13.4
-pydantic-settings==2.14.2
-email-validator==2.3.0
-pyjwt==2.7.0
-bcrypt==5.0.0
-slowapi==0.1.10
-gunicorn==26.0.0
-python-dotenv==1.2.2
-pymupdf==1.28.0
-python-docx==1.2.0
-spacy==3.8.14
-python-multipart==0.0.32
-scikit-learn==1.8.0
-reportlab==4.4.10
-opencv-python-headless==4.13.0.92
-mediapipe==0.10.33
+pydantic==2.10.6
+pydantic-settings==2.8.1
+email-validator==2.2.0
+pyjwt==2.10.1
+bcrypt==4.3.0
+slowapi==0.1.9
+gunicorn==23.0.0
+python-dotenv==1.1.0
+pymupdf==1.26.0
+python-docx==1.1.2
+spacy==3.8.5
+python-multipart==0.0.20
+scikit-learn==1.6.1
+reportlab==4.3.1
+opencv-python-headless==4.10.0.84
+mediapipe==0.10.21
